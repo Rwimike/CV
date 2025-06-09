@@ -1,0 +1,305 @@
+/* Variables y Reset */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f5f7fa;
+}
+
+/* Contenedor Principal */
+.cv {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/* Header */
+.cv__header {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.cv__photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #777;
+}
+
+.cv__name {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.cv__title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.cv__contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.cv__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Contenido Principal */
+.cv__main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar */
+.cv__sidebar {
+    background: var(--light-color);
+    padding: 2rem;
+}
+
+/* Secciones */
+.cv__section {
+    margin-bottom: 2rem;
+}
+
+.cv__section-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+}
+
+/* Habilidades */
+.cv__skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.cv__skill {
+    background: white;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.cv__skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cv__skill-name {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.cv__skill-level {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.cv__skill-level-bar {
+    height: 100%;
+    background: var(--secondary-color);
+}
+
+/* Experiencia */
+.cv__experience-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.cv__experience-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.cv__experience-item:hover {
+    transform: translateX(5px);
+}
+
+.cv__experience-period {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.cv__experience-position {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.cv__experience-company {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
+/* Educación */
+.cv__education-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.cv__education-degree {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.cv__education-institution {
+    color: var(--secondary-color);
+    margin-bottom: 0.3rem;
+}
+
+.cv__education-period {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Idiomas */
+.cv__languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cv__language {
+    background: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+
+/* Footer */
+.cv__footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .cv__main {
+        flex-direction: row;
+    }
+    
+    .cv__content {
+        flex: 3;
+        padding: 2rem;
+    }
+    
+    .cv__sidebar {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .cv__header {
+        padding: 1.5rem;
+    }
+    
+    .cv__photo {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+    
+    .cv__name {
+        font-size: 2rem;
+    }
+    
+    .cv__content, .cv__sidebar {
+        padding: 1.5rem;
+    }
+    
+    .cv__contact {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv__skills {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cv__section {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.cv__section:nth-child(1) { animation-delay: 0.1s; }
+.cv__section:nth-child(2) { animation-delay: 0.2s; }
+.cv__section:nth-child(3) { animation-delay: 0.3s; }
+.cv__section:nth-child(4) { animation-delay: 0.4s; }
+.cv__section:nth-child(5) { animation-delay: 0.5s; }
+
+/* Iconos */
+.cv__icon {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
